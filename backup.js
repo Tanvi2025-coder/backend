@@ -52,7 +52,7 @@ app.post('/users/signup', async (req, res) => {
 })
 
 app.post("/users/login",async (req,res) => {
-   /* if(!req.body){
+    if(!req.body){
         return res.json({"message":"invalid request body"})
     }
     
@@ -62,7 +62,6 @@ app.post("/users/login",async (req,res) => {
     if(!email){
         return res.json({"message":"email is required"})
     }
-    */
     const user = await User.findOne({ email:email })
     if(!user){
         return res.json({"message":"email is invaild"})
